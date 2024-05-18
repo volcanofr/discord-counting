@@ -2,6 +2,8 @@ from pynput import keyboard
 import pyperclip
 import base64
 
+print("")
+
 # The counting channel type
 varChannel = input("Choose your channel between 'counting' (1), 'backwards' (2), 'base64' (3): ")
 if varChannel == "1" or varChannel == "counting":
@@ -22,24 +24,41 @@ elif varType == "backwards":
 else:
   raise Exception("Unknown channel.")
 
-print("Press ESC to leave the programm.")
+print("")
+print("Press 'TAB' to recover your last number sent.")
+print("Press 'ESC' to leave the programm.")
+print("")
+
 controller = keyboard.Controller()
 
+def prepare_next():
+  global varType
+  if varType == "base64":
+    varB64 = base64.b64encode(str(varNumber).encode()).decode()
+    pyperclip.copy(varB64)
+  else:
+    pyperclip.copy(str(varNumber))
+  
+  with controller.pressed(keyboard.Key.ctrl):
+    controller.press('v')
+    controller.release('v')
+    
 def on_press(key):
-  global varNumber, varType
+  global varType, varNumber
   try:
     if key == keyboard.Key.enter:
-      
-      if varType == "base64":
-        varB64 = base64.b64encode(str(varNumber).encode()).decode()
-        pyperclip.copy(varB64)
-      else:
-        pyperclip.copy(str(varNumber))
-      
-      with controller.pressed(keyboard.Key.ctrl):
-        controller.press('v')
-        controller.release('v')
-  
+      prepare_next()
+      if varType == "normal" or varType == "base64":
+        varNumber += 2
+      elif varType == "backwards":
+        varNumber -= 2
+    
+    elif key == keyboard.Key.tab:
+      if varType == "normal" or varType == "base64":
+        varNumber -= 4
+      elif varType == "backwards":
+        varNumber += 4
+      prepare_next()
       if varType == "normal" or varType == "base64":
         varNumber += 2
       elif varType == "backwards":
@@ -47,7 +66,7 @@ def on_press(key):
           
     # Stop
     elif key == keyboard.Key.esc:
-      print("Leaving programm.")
+      print("Leaving programm.\n")
       return False
 
   except AttributeError:
