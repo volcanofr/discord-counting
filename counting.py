@@ -45,7 +45,7 @@ def prepare_next():
   else:
     pyperclip.copy(str(varNumber))
     
-  if needCtrlV == True:
+  if needCtrlV != True:
     with controller.pressed(keyboard.Key.ctrl):
       controller.press('v')
       controller.release('v')
