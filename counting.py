@@ -24,7 +24,13 @@ elif varType == "backwards":
 else:
   raise Exception("Unknown channel.")
 
+# Every how much to count
+varEach = int(input("all how many numbers do you want to count: "))
+
+needCtrlV = True
 print("")
+if needCtrlV == True:
+  print("Press CTRL + V to paste number")
 print("Press 'TAB' to recover your last number sent.")
 print("Press 'ESC' to leave the programm.")
 print("")
@@ -38,35 +44,39 @@ def prepare_next():
     pyperclip.copy(varB64)
   else:
     pyperclip.copy(str(varNumber))
-  
-  with controller.pressed(keyboard.Key.ctrl):
-    controller.press('v')
-    controller.release('v')
+    
+  if needCtrlV == True:
+    with controller.pressed(keyboard.Key.ctrl):
+      controller.press('v')
+      controller.release('v')
     
 def on_press(key):
   global varType, varNumber
   try:
     if key == keyboard.Key.enter:
+      print("copied: " + str(varNumber))
       prepare_next()
       if varType == "normal" or varType == "base64":
-        varNumber += 2
+        varNumber += varEach
       elif varType == "backwards":
-        varNumber -= 2
+        varNumber -= varEach
     
     elif key == keyboard.Key.tab:
+      print("next: " + str(varNumber))
       if varType == "normal" or varType == "base64":
-        varNumber -= 4
+        varNumber -= varEach+1
       elif varType == "backwards":
-        varNumber += 4
+        varNumber += varEach+1
+      print("copied: " + str(varNumber))
       prepare_next()
       if varType == "normal" or varType == "base64":
-        varNumber += 2
+        varNumber += varEach
       elif varType == "backwards":
-        varNumber -= 2
+        varNumber -= varEach
           
     # Stop
     elif key == keyboard.Key.esc:
-      print("Leaving programm.\n")
+      print("\nLeaving programm.\n")
       return False
 
   except AttributeError:
