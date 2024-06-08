@@ -9,7 +9,7 @@ print(COLORS["Reset"] + "\n" + COLORS["Cyan"] + "Starting volcanofr's automatic 
 
 counted = 0
 removed = 0
-next = "unknown"
+next = False
 
 # Types: Base64, Hexadecimal, letter, number
 countType = input(COLORS["Reset"] + COLORS["Blue"] + "Which channel type are you counting on? (Base64, Hexadecimal, letter, number, integer) " +
@@ -79,7 +79,7 @@ def copyAny(number):
   elif countType == "integer":
     next = toInteger(number)
   
-  if next == "unknown":
+  if next == False:
     print(COLORS["Reset"] + COLORS["Red"] + "An error occured on the copy." + COLORS["Reset"] + "\n")
     exit()
   
