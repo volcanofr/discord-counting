@@ -1,0 +1,43 @@
+COLORS = {
+  "Reset": "\33[0m",
+  "Bold": "\33[1m",
+  "Italic": "\33[3m",
+  "Underline": "\33[4m",
+  "Swap": "\33[7m",
+  "Hide": "\33[8m",
+  "Strike": "\33[9m",
+  
+  "Black": "\33[30m",
+  "White": "\33[37m",
+  "Red": "\33[31m",
+  "RedBright": "\33[91m",
+  "Green": "\33[32m",
+  "GreenBright": "\33[92m",
+  "Yellow": "\33[33m",
+  "YellowBright": "\33[93m",
+  "Blue": "\33[34m",
+  "BlueBright": "\33[94m",
+  "Magenta": "\33[35m",
+  "MagentaBright": "\33[95m",
+  "Cyan": "\33[36m",
+  "CyanBright": "\33[96m",
+  
+  "BG_Black": "\33[40m",
+  "BG_Gray": "\33[100m",
+  "BG_White": "\33[47m",
+  "BG_Red": "\33[41m",
+  "BG_RedBright": "\33[101m",
+  "BG_Green": "\33[42m",
+  "BG_GreenBright": "\33[102m",
+  "BG_Yellow": "\33[43m",
+  "BG_YellowBright": "\33[103m",
+  "BG_Blue": "\33[44m",
+  "BG_BlueBright": "\33[104m",
+  "BG_Magenta": "\33[45m",
+  "BG_MagentaBright": "\33[105m",
+  "BG_Cyan": "\33[46m",
+  "BG_CyanBright": "\33[106m",
+}
+
+# for attr, value in COLORS.items():
+#   print(value + attr + COLORS["Reset"])
