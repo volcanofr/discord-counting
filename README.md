@@ -1,8 +1,8 @@
 # Counting (v2)
 
-Made by @volcanofr.
+Made by *@volcanofr*.
 
-> ⚠️ Do not press 'ENTER', unless it is to send the next number
+> ⚠️ Do not press 'ENTER', unless it is to send the next number.
 
 ## Usage
 
