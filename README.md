@@ -1,4 +1,4 @@
-## Blurple Counting
+## Counting (v1)
 
 /!\ Do not press enter unless if it is to send the next number.
 
