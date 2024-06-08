@@ -62,7 +62,7 @@ print(COLORS["Reset"] + COLORS["Yellow"] + "Press 'ESC' to stop the program." + 
 if countType == "number":
   countNext = countLast + (countIncrement/2)
 else:
-  countNext = countLast + int(countIncrement/2)
+  countNext = countLast + 1
 
 def copyAny(number):
   global countType
