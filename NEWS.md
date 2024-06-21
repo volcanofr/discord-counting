@@ -1,3 +1,8 @@
+### [v2.0.3](https://github.com/volcanofr/discord-counting/commit/052e963aec8e3c94e6ca421140bafec8df87e1bb)
+
+- Added auto paste availability, defaults to disabled.
+- Added `requirements.txt`
+
 ### [v2.0.2](https://github.com/volcanofr/discord-counting/commit/443c618fd3332b0fc7a070d93f43a7f6598b275d)
 
 - Added more support on the copy error
@@ -11,12 +16,12 @@
 - Added colors to console
 - Added the copy function
 - Added support for keys:
-  - ESC : stop the program
-  - ENTER : copy the next number (now + increment)
-  - Arrow Right : copy the next number (now + increment)
-  - Arrow Left : copy the previous number (now - increment)
-  - Arrow Up : copy the number +1 (now + 1)
-  - Arrow Down : copy the number -1 (now - 1)
+  - **`ESC` : stop the program**
+  - **`ENTER` : copy the next number (now + increment)**
+  - `Arrow Right` : copy the next number (now + increment)
+  - `Arrow Left` : copy the previous number (now - increment)
+  - `Arrow Up` : copy the number +1 (now + 1)
+  - `Arrow Down` : copy the number -1 (now - 1)
 - Added support for:
   - Base64 integers
   - Hexadecimal integers

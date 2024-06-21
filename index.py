@@ -1,4 +1,4 @@
-pasteNext = True
+pasteNext = False
 
 from utils.colors import COLORS
 from utils.isType import isNumber, isInteger, isBase64, isHex, isLetter
