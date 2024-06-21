@@ -1,4 +1,4 @@
-### [v2.0.3](https://github.com/volcanofr/discord-counting/commit/052e963aec8e3c94e6ca421140bafec8df87e1bb)
+### [v2.0.3](https://github.com/volcanofr/discord-counting/commit/5a866de45b69281ff400ad76857e62eac15170c9)
 
 - Added auto paste availability, defaults to disabled.
 - Added `requirements.txt`
