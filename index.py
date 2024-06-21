@@ -1,3 +1,5 @@
+pasteNext = True
+
 from utils.colors import COLORS
 from utils.isType import isNumber, isInteger, isBase64, isHex, isLetter
 from utils.toType import toNumber, toInteger, toBase64, toHex, toLetter
@@ -84,6 +86,13 @@ def copyAny(number):
     exit()
   
   pyperclip.copy(next)
+  if pasteNext == True:
+    controller = Keyboard.Controller()
+    controller.press(Keyboard.Key.ctrl)
+    controller.press('v')
+    controller.release(Keyboard.Key.ctrl)
+    controller.release('v')
+    
   print(COLORS["Reset"] + COLORS["White"] + "Copied {0} (no. {1})".format(next, number) + COLORS["Reset"])
 
 copyAny(countNext)
